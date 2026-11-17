@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>反诈助手 登录</title>
+  <link rel="stylesheet" href="/styles.css?v=redesign-20261110">
+</head>
+<body class="portal-page">
+  <div class="login-stage">
+    <aside class="login-hero">
+      <div class="brand login-brand">
+        <div class="logo">FS</div>
+        <div>
+          <p class="eyebrow">ANTI-FRAUD AGENT</p>
+          <h1>反诈风险识别与拦截助手</h1>
+        </div>
+      </div>
+
+      <div class="hero-shield" aria-hidden="true">
+        <svg viewBox="0 0 96 116" width="96" height="116" role="presentation">
+          <path class="shield-fill" d="M48 4 L88 18 V52 C88 84 70 102 48 112 C26 102 8 84 8 52 V18 Z"/>
+          <path class="shield-line" d="M48 16 L76 27 V52 C76 78 62 93 48 102 C34 93 20 78 20 52 V27 Z"/>
+          <path class="shield-check" d="M34 52 L44 62 L64 40" fill="none"/>
+        </svg>
+      </div>
+
+      <ul class="hero-points">
+        <li>
+          <span class="pt-mark">✓</span>
+          <span><strong>风险识别</strong>识别冒充公检法、刷单返利、杀猪盘等诈骗话术</span>
+        </li>
+        <li>
+          <span class="pt-mark">✓</span>
+          <span><strong>多智能体协作</strong>五个 Agent 分工完成理解、安全审查与处置建议</span>
+        </li>
+        <li>
+          <span class="pt-mark">✓</span>
+          <span><strong>及时止损</strong>高风险时引导拨打 96110 并联系银行止付</span>
+        </li>
+      </ul>
+
+      <div class="hero-status">
+        <span id="serviceState" class="pill warn">连接中</span>
+        <span id="modelState" class="pill warn">模型读取中</span>
+      </div>
+    </aside>
+
+    <main class="login-form-panel">
+      <div class="login-card">
+        <p class="panel-label">ACCOUNT GATE</p>
+        <h2>选择账号进入对应工作台</h2>
+        <p class="login-lead">用户端做风险识别对话，管理员端做风险监测与处置。</p>
+
+        <form id="loginForm" class="login-form">
+          <label>
+            <span>用户名</span>
+            <input id="username" value="student" autocomplete="username">
+          </label>
+          <label>
+            <span>密码</span>
+            <input id="password" value="student123" type="password" autocomplete="current-password">
+          </label>
+          <button class="primary full" type="submit">登录并进入</button>
+          <p id="loginState" class="hint">用户：student / student123，管理员：admin / admin123</p>
+        </form>
+
+        <div class="entry-grid" aria-label="角色入口说明">
+          <article class="entry-card student-entry">
+            <span class="entry-kicker">USER</span>
+            <h3>用户端</h3>
+            <p>反诈识别对话、快捷场景和会话状态。</p>
+          </article>
+          <article class="entry-card admin-entry">
+            <span class="entry-kicker">ADMIN</span>
+            <h3>管理员端</h3>
+            <p>风险报告、个案闭环、知识库维护与系统数据。</p>
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/app.js?v=redesign-20261110"></script>
+</body>
+</html>

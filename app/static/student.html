@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>反诈助手 用户端</title>
+  <link rel="stylesheet" href="/styles.css?v=redesign-20261110">
+</head>
+<body class="student-page">
+  <div class="app-shell">
+    <aside class="app-nav">
+      <div class="nav-brand">
+        <div class="logo student-logo">FS</div>
+        <div class="nav-brand-copy">
+          <strong>反诈助手</strong>
+          <span>ANTI-FRAUD</span>
+        </div>
+      </div>
+
+      <nav class="nav-items" aria-label="主导航">
+        <a class="nav-item active" href="#chat">
+          <span class="nav-ico">▤</span><span>对话识别</span>
+        </a>
+        <a class="nav-item" href="#history">
+          <span class="nav-ico">◷</span><span>历史会话</span>
+        </a>
+        <a class="nav-item" href="#quick">
+          <span class="nav-ico">⚑</span><span>快捷上报</span>
+        </a>
+      </nav>
+
+      <div class="nav-account">
+        <div class="account">
+          <strong id="activeAccount">用户</strong>
+          <span>用户端</span>
+        </div>
+        <button id="switchAccount" class="dark-btn" type="button">退出</button>
+      </div>
+    </aside>
+
+    <main class="student-main">
+      <header class="main-header">
+        <div>
+          <p class="panel-label">ANTI-FRAUD COMPANION</p>
+          <h2 id="studentGreeting">识别诈骗，及时止损</h2>
+        </div>
+        <div class="header-meta">
+          <span id="sessionBadge" class="pill">READY</span>
+          <span id="serviceState" class="pill warn">连接中</span>
+          <span id="modelState" class="pill warn">模型读取中</span>
+        </div>
+      </header>
+
+      <div class="student-body">
+        <section class="chat-panel" id="chat">
+          <div class="chat-head">
+            <div class="chat-heading">
+              <span class="assistant-avatar">FS</span>
+              <div>
+                <strong>反诈风险识别助手</strong>
+                <p class="chat-subtitle">把短信、来电或聊天内容发给我，我帮你判断真伪。</p>
+              </div>
+            </div>
+            <div class="session-state">
+              <span class="session-dot"></span>
+              <span>实时会话</span>
+            </div>
+          </div>
+
+          <div class="trust-row" aria-label="对话特点">
+            <span><i></i>识别诈骗话术</span>
+            <span><i></i>保护你的隐私</span>
+            <span><i></i>风险时建议立即止损</span>
+          </div>
+
+          <div id="messages" class="messages">
+            <div class="empty student-welcome">
+              <span class="welcome-kicker">REPORT A SUSPECT</span>
+              <strong>不确定是不是诈骗？</strong>
+              <p>把短信、来电或聊天内容发给我，我帮你判断风险并给出处置建议。</p>
+              <div class="welcome-prompts">
+                <button type="button" data-quick="收到一条短信，让我点链接领奖。">收到链接领奖短信</button>
+                <button type="button" data-quick="有陌生人加我微信，说要带我赚钱。">陌生人加微信带我赚钱</button>
+                <button type="button" data-quick="有电话说我卡被冻结，需要验证码。">电话索要验证码</button>
+              </div>
+            </div>
+          </div>
+
+          <form id="chatForm" class="composer">
+            <div class="composer-shell">
+              <textarea id="messageInput" maxlength="1000" placeholder="把短信、来电或聊天内容发给我……" rows="2"></textarea>
+              <div class="composer-meta">
+                <span>不要透露验证码和密码</span>
+                <span id="charCount">0 / 1000</span>
+              </div>
+            </div>
+            <div class="composer-actions">
+              <span class="keyboard-hint">Enter 换行 · 点击按钮发送</span>
+              <div class="composer-buttons">
+                <button id="newSession" class="ghost" type="button">重新开始</button>
+                <button id="sendButton" class="primary" type="submit">发送消息 <span>↗</span></button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <aside class="context-rail">
+          <section class="companion-card" id="quick">
+            <div class="companion-visual" role="img" aria-label="反诈防护盾牌"></div>
+            <div class="companion-copy">
+              <span>YOUR MONEY GUARD</span>
+              <h2>先别急着转账</h2>
+              <p>把可疑的信息发给我，我帮你判断真伪。</p>
+            </div>
+          </section>
+
+          <section class="panel checkin-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel-label">QUICK REPORT</p>
+                <h3>遇到哪种情况？</h3>
+              </div>
+              <span class="checkin-note">选择一个开始</span>
+            </div>
+            <div class="signal-grid">
+              <button class="signal" type="button" data-quick="有人拉我刷单返利，说先垫钱后返现。">
+                <span class="signal-icon">◒</span>
+                <span><strong>刷单返利</strong><small>先垫钱后返现</small></span>
+              </button>
+              <button class="signal" type="button" data-quick="有客服打电话说给我退款理赔。">
+                <span class="signal-icon">≈</span>
+                <span><strong>冒充客服</strong><small>退款理赔来电</small></span>
+              </button>
+              <button class="signal" type="button" data-quick="网友带我投资，说稳赚不赔。">
+                <span class="signal-icon">—</span>
+                <span><strong>投资理财</strong><small>带你稳赚不赔</small></span>
+              </button>
+              <button class="signal" type="button" data-quick="警察说我涉嫌洗钱，让我转安全账户。">
+                <span class="signal-icon">↗</span>
+                <span><strong>冒充公检法</strong><small>要求转安全账户</small></span>
+              </button>
+            </div>
+          </section>
+
+          <section class="panel history-panel" id="history">
+            <div class="section-head">
+              <div>
+                <h3>历史会话</h3>
+                <p id="historyState" class="history-state" aria-live="polite">正在读取...</p>
+              </div>
+              <button id="refreshHistory" class="history-refresh" type="button">刷新</button>
+            </div>
+            <div id="historyList" class="history-list" aria-live="polite" aria-busy="true"></div>
+          </section>
+
+          <section class="support-note">
+            <span class="support-mark">FS</span>
+            <div>
+              <strong>不轻信、不透露、不转账</strong>
+              <p>对话用于反诈识别，不代替公安机关办案；如已转账，请立即拨打 96110 并联系银行止付。</p>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="/student.js?v=redesign-20261110"></script>
+  <script>
+    (function () {
+      var items = Array.prototype.slice.call(document.querySelectorAll(".nav-items .nav-item"));
+      items.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+          var id = item.getAttribute("href");
+          var target = id ? document.querySelector(id) : null;
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+          items.forEach(function (n) { n.classList.toggle("active", n === item); });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

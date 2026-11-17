@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>反诈助手 管理员端</title>
+  <link rel="stylesheet" href="/styles.css?v=redesign-20261110">
+</head>
+<body class="admin-page">
+  <div class="app-shell">
+    <aside class="app-nav">
+      <div class="nav-brand">
+        <div class="logo admin-logo">FS</div>
+        <div class="nav-brand-copy">
+          <strong>反诈后台</strong>
+          <span>ADMIN</span>
+        </div>
+      </div>
+
+      <nav class="nav-items" aria-label="主导航">
+        <a class="nav-item active" href="#overview">
+          <span class="nav-ico">▤</span><span>总览</span>
+        </a>
+        <a class="nav-item" href="#cases-panel">
+          <span class="nav-ico">▣</span><span>风险个案</span>
+        </a>
+        <a class="nav-item" href="#reports">
+          <span class="nav-ico">☰</span><span>风险报告</span>
+        </a>
+        <a class="nav-item" href="#knowledge">
+          <span class="nav-ico">▤</span><span>知识库</span>
+        </a>
+        <a class="nav-item" href="#traces">
+          <span class="nav-ico">⚙</span><span>协作轨迹</span>
+        </a>
+      </nav>
+
+      <div class="nav-account">
+        <div class="account">
+          <strong id="activeAccount">管理员</strong>
+          <span>管理员端</span>
+        </div>
+        <button id="switchAccount" class="dark-btn" type="button">退出</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="main-header admin-header">
+        <div>
+          <p class="panel-label">ADMIN CONSOLE</p>
+          <h1>反诈风险监测后台</h1>
+        </div>
+        <div class="header-meta">
+          <span id="lastUpdated" class="update-stamp">等待数据刷新</span>
+          <span id="serviceState" class="pill warn">连接中</span>
+          <span id="modelState" class="pill warn">模型读取中</span>
+          <button id="refreshAdmin" class="ghost" type="button">刷新</button>
+        </div>
+      </header>
+
+      <div class="admin-scroll">
+        <section class="metric-strip" id="overview" aria-label="核心运营指标">
+          <div class="metric metric-blue">
+            <div class="metric-head"><span>风险报告</span><i></i></div>
+            <strong id="metricReports">0</strong>
+            <small id="metricReportsMeta">累计沉淀</small>
+          </div>
+          <div class="metric metric-red">
+            <div class="metric-head"><span>高风险报告</span><i></i></div>
+            <strong id="metricHigh">0</strong>
+            <small id="metricHighMeta">占比 0%</small>
+          </div>
+          <div class="metric metric-amber">
+            <div class="metric-head"><span>风险个案</span><i></i></div>
+            <strong id="metricCases">0</strong>
+            <small id="metricCasesMeta">待跟进 0</small>
+          </div>
+          <div class="metric metric-teal">
+            <div class="metric-head"><span>Excel 写入</span><i></i></div>
+            <strong id="metricExcel">0</strong>
+            <small id="metricExcelMeta">成功 0</small>
+          </div>
+          <div class="metric metric-purple">
+            <div class="metric-head"><span>风险预警</span><i></i></div>
+            <strong id="metricAlerts">0</strong>
+            <small id="metricAlertsMeta">发送成功 0</small>
+          </div>
+        </section>
+
+        <section class="analytics-grid">
+          <article class="panel trend-panel">
+            <div class="chart-head">
+              <div>
+                <p class="panel-label">7-DAY TREND</p>
+                <h3>近 7 日报告趋势</h3>
+              </div>
+              <span id="trendTotal" class="chart-total">共 0 条</span>
+            </div>
+            <div id="activityTrend" class="trend-chart" aria-label="近 7 日报告数量"></div>
+          </article>
+
+          <div class="distribution-grid">
+            <article class="insight-card">
+              <div>
+                <p class="panel-label">RISK LEVEL</p>
+                <h3>风险等级</h3>
+              </div>
+              <div id="riskDistribution" class="distribution-list"></div>
+            </article>
+            <article class="insight-card">
+              <div>
+                <p class="panel-label">SIGNAL</p>
+                <h3>信号分布</h3>
+              </div>
+              <div id="signalDistribution" class="distribution-list"></div>
+            </article>
+            <article class="insight-card">
+              <div>
+                <p class="panel-label">INTENT</p>
+                <h3>意图类型</h3>
+              </div>
+              <div id="intentDistribution" class="distribution-list"></div>
+            </article>
+            <article class="insight-card">
+              <div>
+                <p class="panel-label">DELIVERY</p>
+                <h3>工具状态</h3>
+              </div>
+              <div id="toolDistribution" class="distribution-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="admin-data-grid" id="reports">
+          <section class="panel data-panel" id="cases-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel-label">CASES</p>
+                <h2>风险个案闭环</h2>
+              </div>
+              <span id="casesCount" class="section-count">0 个个案</span>
+            </div>
+            <div id="cases" class="cases scroll-list"></div>
+          </section>
+
+          <section class="panel data-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel-label">REPORTS</p>
+                <h2>风险报告记录</h2>
+              </div>
+              <span id="reportsCount" class="section-count">0 条报告</span>
+            </div>
+            <div id="reports" class="reports scroll-list"></div>
+          </section>
+
+          <section class="panel data-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel-label">DELIVERY LOG</p>
+                <h2>工具执行记录</h2>
+              </div>
+            </div>
+            <div class="delivery-block">
+              <div class="delivery-heading">
+                <strong>Excel 写入</strong>
+                <span id="excelCount">0 条</span>
+              </div>
+              <div id="excelRecords" class="delivery-list"></div>
+            </div>
+            <div class="delivery-block">
+              <div class="delivery-heading">
+                <strong>预警发送</strong>
+                <span id="alertCount">0 条</span>
+              </div>
+              <div id="alertRecords" class="delivery-list"></div>
+            </div>
+          </section>
+        </section>
+
+        <section class="admin-detail-grid">
+          <section class="panel" id="knowledge">
+            <div class="section-head">
+              <div>
+                <p class="panel-label">KNOWLEDGE BASE</p>
+                <h2>RAG 知识库维护</h2>
+              </div>
+              <span id="knowledgeState" class="hint">等待读取</span>
+            </div>
+            <form id="knowledgeUploadForm" class="upload-row">
+              <input id="knowledgeFile" type="file" accept=".pdf,.md,.markdown,.txt,application/pdf,text/markdown,text/plain">
+              <button class="primary" type="submit">上传入库</button>
+            </form>
+            <div class="admin-actions">
+              <button id="rebuildVector" class="ghost" type="button">重建向量索引</button>
+              <button id="backupVector" class="ghost" type="button">备份向量索引</button>
+            </div>
+            <p id="knowledgeUploadState" class="hint">支持 PDF、Markdown、txt 文件</p>
+          </section>
+
+          <section class="panel">
+            <div class="section-head">
+              <div>
+                <p class="panel-label">SESSION ARCHIVE</p>
+                <h2>会话档案审阅</h2>
+              </div>
+              <span id="conversationState" class="hint">选择一条报告查看</span>
+            </div>
+            <div id="conversationDetail" class="conversation-detail">
+              <div class="empty small">
+                <strong>未选择报告</strong>
+                <p>点击报告后，这里只读展示完整历史消息。</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="panel trace-panel" id="traces">
+          <div class="section-head">
+            <div>
+              <p class="panel-label">AGENT COLLABORATION</p>
+              <h2>多智能体协作过程</h2>
+            </div>
+            <span id="traceCount" class="section-count">0 条 trace</span>
+          </div>
+          <p class="hint">点开任意一条，查看 Coordinator / Understanding / Safety / Context / Response 各 agent 在黑板上的协作、安全审查与最终采纳过程。</p>
+          <div id="agentTraces" class="traces scroll-list"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/admin.js?v=redesign-20261110"></script>
+  <script>
+    (function () {
+      var items = Array.prototype.slice.call(document.querySelectorAll(".nav-items .nav-item"));
+      items.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+          var id = item.getAttribute("href");
+          var target = id ? document.querySelector(id) : null;
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+          items.forEach(function (n) { n.classList.toggle("active", n === item); });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

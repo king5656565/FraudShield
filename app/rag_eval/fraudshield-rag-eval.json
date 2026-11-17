@@ -1,0 +1,553 @@
+[
+  {
+    "id": "risk-high-safe-account",
+    "question": "用户明确说要把钱转到安全账户，风险等级如何判断？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "high",
+      "冒充公检法",
+      "转账到安全账户"
+    ]
+  },
+  {
+    "id": "risk-high-verification-code",
+    "question": "对方索要验证码，在风险策略里属于什么信号？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "high",
+      "索要验证码"
+    ]
+  },
+  {
+    "id": "risk-high-transferred",
+    "question": "用户已经把钱转出去了，风险策略怎么定级？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "high",
+      "已发生转账"
+    ]
+  },
+  {
+    "id": "risk-high-money-laundering",
+    "question": "对方以涉嫌洗钱恐吓要求配合，属于什么风险？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "high",
+      "涉嫌洗钱恐吓"
+    ]
+  },
+  {
+    "id": "risk-high-urgency-threat",
+    "question": "紧急催促威胁属于什么风险信号？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "high",
+      "紧急催促威胁"
+    ]
+  },
+  {
+    "id": "risk-medium-suspected-signals",
+    "question": "疑似诈骗信号包括哪些？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "medium",
+      "疑似诈骗信号",
+      "诱导点击链接或加好友"
+    ]
+  },
+  {
+    "id": "risk-medium-return-rebate",
+    "question": "异常返利返现属于什么风险等级？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "medium",
+      "异常返利返现"
+    ]
+  },
+  {
+    "id": "risk-medium-investment",
+    "question": "可疑投资理财在风险策略里属于什么等级？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "medium",
+      "可疑投资理财"
+    ]
+  },
+  {
+    "id": "risk-medium-impersonation-cs",
+    "question": "冒充客服理赔属于什么风险？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "medium",
+      "冒充客服理赔"
+    ]
+  },
+  {
+    "id": "risk-medium-loan-credit",
+    "question": "贷款征信异常属于什么等级？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "medium",
+      "贷款征信异常"
+    ]
+  },
+  {
+    "id": "risk-medium-personal-info",
+    "question": "索要个人信息属于什么风险信号？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "medium",
+      "索要个人信息"
+    ]
+  },
+  {
+    "id": "risk-medium-verify",
+    "question": "中风险时回复应该提示什么？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "medium",
+      "提示风险",
+      "核实真伪"
+    ]
+  },
+  {
+    "id": "risk-low-normal-chat",
+    "question": "普通信息、日常咨询没有诈骗信号时属于什么等级？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "low",
+      "普通信息",
+      "日常咨询"
+    ]
+  },
+  {
+    "id": "risk-levels-overview",
+    "question": "系统的风险等级一共有哪几类？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "risk-compare-medium-high",
+    "question": "中风险和高风险的关键区别是什么？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "medium",
+      "high",
+      "明确诈骗"
+    ]
+  },
+  {
+    "id": "risk-judge-basis",
+    "question": "风险判断的依据是什么？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "诈骗信号强弱",
+      "是否涉及转账",
+      "是否涉及验证码"
+    ]
+  },
+  {
+    "id": "risk-ledger",
+    "question": "高风险事件需要写入台账吗？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "high",
+      "写入台账"
+    ]
+  },
+  {
+    "id": "risk-alert",
+    "question": "高风险时会不会触发预警？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "high",
+      "高风险预警",
+      "发送预警"
+    ]
+  },
+  {
+    "id": "risk-response-first",
+    "question": "高风险回复的第一句话应该是什么？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "high",
+      "这是诈骗，立即停止一切操作"
+    ]
+  },
+  {
+    "id": "risk-stop-loss",
+    "question": "高风险信息的处置应该优先什么？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "high",
+      "止损",
+      "现实处置"
+    ]
+  },
+  {
+    "id": "risk-boundary-no-label",
+    "question": "回复时能不能向用户输出后台风险等级或标签？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "不向用户输出",
+      "风险等级"
+    ]
+  },
+  {
+    "id": "risk-boundary-no-retry",
+    "question": "用户想再投一笔回本，系统应该怎么处理？",
+    "expectedSources": [
+      "risk-policy.md"
+    ],
+    "expectedTerms": [
+      "再试一笔回本"
+    ]
+  },
+  {
+    "id": "fraud-types-overview",
+    "question": "常见的电信网络诈骗类型有哪些？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "冒充公检法",
+      "刷单返利",
+      "杀猪盘"
+    ]
+  },
+  {
+    "id": "fraud-types-impersonation-police",
+    "question": "冒充公检法诈骗属于哪一类？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "冒充公检法"
+    ]
+  },
+  {
+    "id": "fraud-types-brushing",
+    "question": "刷单返利是不是常见诈骗类型？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "刷单返利"
+    ]
+  },
+  {
+    "id": "fraud-types-pig-butcher",
+    "question": "杀猪盘情感诈骗在知识库里怎么定义？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "杀猪盘情感诈骗"
+    ]
+  },
+  {
+    "id": "fraud-types-cs-refund",
+    "question": "冒充客服理赔退款是什么诈骗？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "冒充客服理赔退款"
+    ]
+  },
+  {
+    "id": "fraud-types-loan",
+    "question": "贷款、征信、提额诈骗在知识库里有提到吗？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "贷款/征信/提额诈骗"
+    ]
+  },
+  {
+    "id": "fraud-types-prize",
+    "question": "虚假中奖与免费领取属于诈骗类型吗？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "虚假中奖与免费领取"
+    ]
+  },
+  {
+    "id": "fraud-recognize-points",
+    "question": "识别诈骗的关键要点有哪些？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "转账",
+      "验证码",
+      "先交钱",
+      "安全账户",
+      "屏幕共享"
+    ]
+  },
+  {
+    "id": "fraud-disposal-stop",
+    "question": "疑似诈骗时第一步应该做什么？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "立即停止一切转账"
+    ]
+  },
+  {
+    "id": "fraud-disposal-info",
+    "question": "哪些敏感信息不能透露？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "验证码",
+      "银行卡号",
+      "身份证号"
+    ]
+  },
+  {
+    "id": "fraud-disposal-link",
+    "question": "收到可疑链接或 APP 下载要求怎么办？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "不点击链接",
+      "不下载对方指定的 APP"
+    ]
+  },
+  {
+    "id": "fraud-disposal-screen-share",
+    "question": "屏幕共享有什么风险？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "不开启屏幕共享",
+      "屏幕共享"
+    ]
+  },
+  {
+    "id": "fraud-evidence",
+    "question": "被骗后应该保留哪些证据？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "聊天记录",
+      "转账凭证",
+      "对方账号"
+    ]
+  },
+  {
+    "id": "fraud-report-96110",
+    "question": "举报核实可以打什么电话？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "96110"
+    ]
+  },
+  {
+    "id": "fraud-report-app",
+    "question": "通过哪个 APP 可以举报核实？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "国家反诈中心"
+    ]
+  },
+  {
+    "id": "fraud-freeze",
+    "question": "已经转账了应该怎么止损？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "冻结止付",
+      "银行"
+    ]
+  },
+  {
+    "id": "fraud-boundary-police",
+    "question": "助手能不能代替公安机关办案？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "不代替公安机关办案"
+    ]
+  },
+  {
+    "id": "fraud-boundary-legal",
+    "question": "涉及具体案情或金额应该建议用户找谁？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "96110",
+      "110",
+      "公安机关"
+    ]
+  },
+  {
+    "id": "fraud-default-tone",
+    "question": "反诈助手的默认回复应该是什么样的？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "明确、直接、可执行"
+    ]
+  },
+  {
+    "id": "fraud-normal-chat",
+    "question": "面对普通咨询，助手应该怎么做？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "自然准确地回答",
+      "不主动做诈骗判定"
+    ]
+  },
+  {
+    "id": "fraud-suspected-calm",
+    "question": "面对疑似诈骗信息，助手应该帮用户做什么？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "冷静判断",
+      "及时止损"
+    ]
+  },
+  {
+    "id": "fraud-no-label",
+    "question": "助手会不会向用户输出后台风险等级？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "不向用户输出后台风险等级"
+    ]
+  },
+  {
+    "id": "fraud-role",
+    "question": "这个反诈助手的职责范围是什么？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "风险识别",
+      "止损指引",
+      "证据保留",
+      "举报路径"
+    ]
+  },
+  {
+    "id": "fraud-recognize-safe-account",
+    "question": "为什么「安全账户」是诈骗关键词？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "安全账户"
+    ]
+  },
+  {
+    "id": "fraud-disposal-app",
+    "question": "对方要求下载不明 APP 该怎么办？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "下载不明 APP",
+      "不下载对方指定的 APP"
+    ]
+  },
+  {
+    "id": "fraud-leader",
+    "question": "冒充领导或熟人借钱转账怎么识别？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "冒充领导或熟人借钱转账"
+    ]
+  },
+  {
+    "id": "fraud-nude-extortion",
+    "question": "裸聊敲诈在知识库里有提到吗？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "裸聊敲诈"
+    ]
+  },
+  {
+    "id": "fraud-shopping",
+    "question": "虚假购物属于常见诈骗类型吗？",
+    "expectedSources": [
+      "fraud-awareness.md"
+    ],
+    "expectedTerms": [
+      "虚假购物"
+    ]
+  }
+]

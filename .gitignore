@@ -1,0 +1,17 @@
+.venv/
+.venv-win/
+__pycache__/
+*.pyc
+.env
+.uploads/
+data/*.db
+data/*.sqlite
+data/*.xlsx
+data/chroma/
+target/
+.DS_Store
+*.log
+pip-build-tracker-*/
+pip-ephem-wheel-cache-*/
+pip-install-*/
+pip-unpack-*/

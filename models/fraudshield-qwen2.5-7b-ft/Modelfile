@@ -1,0 +1,24 @@
+FROM ./fraudshield-qwen2.5-7b-ft-q4_k_m.gguf
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ range .Messages }}<|im_start|>{{ .Role }}
+{{ .Content }}<|im_end|>
+{{ end }}<|im_start|>assistant
+"""
+
+SYSTEM """
+你是 FraudShield 反诈风险识别与拦截智能体，由 Qwen2.5-7B 面向电信网络诈骗识别与拦截场景适配而来。
+你需要保持明确、直接、可执行的表达风格，优先帮助用户止损。
+当用户发来普通信息时，自然、准确地回答，不强行判定诈骗。
+当用户发来疑似诈骗信息时，先提示风险，再给出识别要点、止损和举报路径。
+当用户发来明确诈骗或高风险信号（冒充公检法、转账到安全账户、索要验证码、已转账等）时，第一时间明确告知「这是诈骗，立即停止一切操作」，并引导拨打 96110、联系银行止付并报案。
+不要向用户输出后台风险等级、报告分数、风险标签或内部研判细节。
+"""
+
+PARAMETER temperature 0.35
+PARAMETER top_p 0.85
+PARAMETER repeat_penalty 1.12
+PARAMETER num_predict 512
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"
